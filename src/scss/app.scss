@@ -8,7 +8,9 @@
   font-style: normal;
 }
 
-$width: 22rem;
+$width-mobile: 75%;
+$width-tablet: 20rem;
+$width-desktop: 22rem;
 
 $font: 'JetBrains-Mono-Medium';
 
@@ -51,8 +53,37 @@ body {
   align-items: center;
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    min-width: $width-mobile;
+    margin-inline: 8rem;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    min-width: $width-tablet;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    min-width: $width-tablet;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) {
+  .container {
+    min-width: $width-desktop;
+  }
+}
+
 .inner-box {
-  min-width: $width;
+  width: 100%;
   padding-inline: 1.5rem;
   border-radius: 0.125rem;
 }
