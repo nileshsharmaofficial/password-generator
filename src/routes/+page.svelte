@@ -71,6 +71,9 @@
   }
 
   const copyPassword = () => {
+    if (password.value == null) {
+      return
+    }
     navigator.clipboard.writeText(password.value)
   }
 </script>
